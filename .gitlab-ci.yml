@@ -1,11 +1,11 @@
 # The Docker image that will be used to build your app
-image: node:latest
+image: ruby:latest
 # Functions that should be executed before the build script is run
 before_script:
-  - sudo
+  - gem install bundler
 pages:
   script:
-    - sudo
+    - bundle exec jekyll serve
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
