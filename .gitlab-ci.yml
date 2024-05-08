@@ -1,2 +1,12 @@
-# The Docker image that will be used to build your app
 image: debian
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -R * public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
