@@ -2,10 +2,10 @@
 image: node:latest
 # Functions that should be executed before the build script is run
 before_script:
-  - npm install cloudflare
+  - sudo
 pages:
   script:
-    - npm run build
+    - sudo
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
