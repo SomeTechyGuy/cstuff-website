@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect /articles to /articles/ if there is no trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^articles$ /articles/ [R=301,L]
+
+# Rewrite rule for the articles directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^articles/(.*)$ /articles/$1.html [L]
+
+# Rewrite rule for all other pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1.html [L]
